@@ -8,52 +8,84 @@ Press SHIFT+z to run the script.
 +z::{
 
 Click "1160 325"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1280 325"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1400 325"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1520 325"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1640 325"
+Sleep 1
 Click "1740 1290"
+Sleep 1
 
 Click "1760 325"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1880 325"
+Sleep 1
 Click "1740 1290"
+Sleep 1
 
 Click "2000 325"
-Click "1740 1290"  
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 
 
 Click "1160 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1280 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1400 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1520 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1640 430"
+Sleep 1
 Click "1740 1290"
+Sleep 1
 
 Click "1760 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 
 Click "1880 430"
+Sleep 1
 Click "1740 1290"
+Sleep 1
 
 Click "2000 430"
-Click "1740 1290" 
+Sleep 1
+Click "1740 1290"
+Sleep 1
 }
