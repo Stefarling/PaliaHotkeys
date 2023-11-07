@@ -1,6 +1,14 @@
-﻿Xbutton2::
-MouseClick, left, 450, 550, , 1
-MouseClick, left, 1600, 1190, , 1
-MouseClick, left, 450, 670, , 1
-MouseClick, left, 1600, 1190, , 1
-return
+﻿#Requires AutoHotkey v2.0
+
+/* 
+Use this script to select Batter when creating a Celebration Cake.
+This is to avoid fighting the UI at CakeParty.
+Press SHIFT+z to run the script.
+*/
+
++z::{                    ; Change according to taste
+Click "450 550"
+Click "1600 1190"
+Click "450 670"
+Click "1600 1190"
+}
