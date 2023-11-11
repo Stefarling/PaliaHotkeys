@@ -1,4 +1,5 @@
 ﻿#Requires AutoHotkey v2.0
+; This script is for primary monitors at 2560x1440
 
 /* 
 Use this script to sell rows 4 and 5 at Zeki's.

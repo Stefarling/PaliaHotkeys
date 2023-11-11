@@ -1,4 +1,5 @@
 #Requires AutoHotkey v2.0
+; This script is for primary monitors at 1920x1080
 
 /* 
 Use this script to start a Chili Oil Dumpling.

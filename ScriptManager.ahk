@@ -4,7 +4,7 @@
 
 ; Root folder for ScriptManager scripts
 TreeRoot := A_ScriptDir "\Scripts"
-TreeViewWidth := 280
+TreeViewWidth := 175
 ListViewWidth := A_ScreenWidth/2 - TreeViewWidth - 30
 
 ; Create the MyGui window and display the source directory (TreeRoot) in the title bar:
@@ -15,7 +15,7 @@ ImageListID := IL_Create(5)
 Loop 5 
     IL_Add(ImageListID, "shell32.dll", A_Index)
 ; Create a TreeView and a ListView side-by-side to behave like Windows Explorer:
-TV := MyGui.Add("TreeView", "r20 w" TreeViewWidth " ImageList" ImageListID)
+TV := MyGui.Add("TreeView", "ImageList" ImageListID)
 LV := MyGui.Add("ListView", "r20 w" ListViewWidth " x+10", ["Name","Modified"])
 
 ; Create a Status Bar to give info about the number of files and their total size:
