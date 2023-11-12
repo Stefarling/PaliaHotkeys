@@ -5,6 +5,8 @@ Read the documentation for AutoHotKey here: https://www.autohotkey.com/docs/v2/
 
 Scripts are screen resolution dependant, except for the scripts in the "Universal" folder.
 
+Scripts work only in Windowed Fullscreen.
+
 !!!! MAKE SURE YOU'RE USING THE RIGHT SCRIPTS FOR THE RIGHT SCREEN SIZE !!!!
 !!!! CURRENTLY ONLY WORKS ON PRIMARY MONITOR                            !!!!
 
