@@ -37,9 +37,9 @@ LockButton          := MainGui.Add("Button","YP w60 r2", "Lock`nF5")
 LapTimeButton       := MainGui.Add("Button","vLapTime Section XS Y+m r1","00:00:00.000")
 TotalTimeButton     := MainGui.Add("Button","vTotalTime Section","00:00:00.000")
 
-LapView             := MainGui.Add("ListView", "Section w290 Count 200 NoSortHdr -LV0x10 -ReadOnly -WantF2", ["#", "Lap Time", "Total Time"])
+LapView             := MainGui.Add("ListView", "-Multi Section w290 Count 200 NoSortHdr -LV0x10 -ReadOnly -WantF2", ["#", "Lap Time", "Total Time"])
 LapView.ModifyCol
-LapView.ModifyCol(1, "Integer Center AutoHdr")
+LapView.ModifyCol(1, "Integer Center AutoHdr 40")
 LapView.ModifyCol(2, "Integer Center 110 ")
 LapView.ModifyCol(3, "Integer Center 110 ")
 
@@ -47,14 +47,15 @@ LapView.ModifyCol(3, "Integer Center 110 ")
 StartButton.OnEvent("Click", (*) => ActivateStart())
 LapButton.OnEvent("Click", (*) => ActivateLap())
 ExportButton.OnEvent("Click", (*) => ActivateExport())
+LockButton.OnEvent("Click", (*) => ToggleOSD())
 
 ToggleOSD(){
     programStyle := "+0x80"
     transparencyLevel := 225
     
     if(Locked){
-        LapView.Opt("+Hdr +LV0x1000 +E0x200")
-        MainGui.Opt("+Caption")
+        LapView.Opt("+Hdr +LV0x1000 +E0x200 +E0x20")
+        MainGui.Opt("+Caption +E0x20")
 
         WinSetTransparent "Off", ProgramName
         StartButton.Visible := true
@@ -73,18 +74,18 @@ ToggleOSD(){
 
         WinSetTransColor(MainGui.BackColor " " transparencyLevel, MainGui)
         
-        MainGui.Opt("-Caption")
+        MainGui.Opt("-Caption -E0x20")
 
         StartButton.Visible := false
         ExportButton.Visible := false
         LapButton.Visible := false
         LockButton.Visible := false
         LapView.Opt("BackgroundSilver")
-        LapView.SetFont("s14 Bold")
+        LapView.SetFont("s12 Bold")
         LapTimeButton.SetFont("s11 Bold")
         TotalTimeButton.SetFont("s11 Bold")
 
-        LapView.Opt("-Hdr -LV0x1000 -E0x200")
+        LapView.Opt("-Hdr -LV0x1000 -E0x200 -E0x20")
 
 
         global Locked := true
