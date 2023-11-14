@@ -1,55 +1,87 @@
 #Requires AutoHotkey v2.0
 ; Manages all scripts in a folder
 
-; STILL NOT FUNCTIONAL
 
 /*
+Use this script to manage all scripts in the folder.
+*/
 
+
+/* TODO
+Make a scripts folder button.
+Add green/red light when running.
+Add ability to preview script content.
+Add Test button.
+Add most of this to context menu.
 */
 
 ; Settings
-
-
-; Variables
-Version                 := "0.0.2a"
-WindowTitle             := "PaliaHotkeys v" Version
-Resolutions             := ["1280x720", "1920x1080", "2560x1440"]
-MainGui                 := Gui()
-MainGui.Title           := WindowTitle
-Resolution              := "Nothing selected."
+Persistent
 
 
 ; Hotkeys
 
 
-; Function
-UpdateResolution(obj, info) {
-    if obj.Value < 1{
-        ; The control returns an actual array, NOT an AHK array.
-    }else{
-    global Resolution := Resolutions[obj.Value]
-    RPickerText.Text := Resolution
+; Variables
+ProgramName             := "ScriptManager by Stef"
+Resolutions             := ["1280x720", "1920x1080", "2560x1440"]
+Scripts                 := []
+Resolution              := ""
+
+
+; Gui
+MainGui                 := Gui()
+MainGui.Title           := ProgramName
+
+; Gui Controls
+ResolutionGuiLabel      := MainGui.Add("Text", "Section","Resolution")
+ResolutionComboBox      := MainGui.Add("ComboBox", "", Resolutions)
+
+StartButton              := MainGui.Add("Button", "Y+40 r1", "Start Script")
+StopButton               := MainGui.Add("Button", "YP r1", "Stop Script")
+
+
+; Gui ListView
+ListView                := MainGui.Add("ListView", "Section YS w300",["Running", "Script Name", "Path"])
+ListView.ModifyCol()
+
+; Gui Statusbar
+StatusBar               := MainGui.Add("StatusBar",,)
+
+; Gui OnEvents
+ResolutionComboBox.OnEvent("Change", UpdateResolution )
+
+
+; Functions
+UpdateResolution(obj, info){
+    if ( obj.Value > 0){
+        global Resolution := Resolutions[obj.Value]
     }
+
+    ListScripts()
+
+}
+
+ListScripts(){
+    scriptsUniversalPath    := A_ScriptDir "\Scripts\Palia\Universal"
+    scriptsResolutionPath   := A_ScriptDir "\Scripts\Palia\" Resolution
+
+    ListView.Delete()
+
+    Loop Files, scriptsUniversalPath "\*.ahk"
+        ListView.Add(,, A_LoopFileName, A_LoopFilePath)
+
+    Loop Files, scriptsResolutionPath "\*ahk"
+        ListView.Add(,, A_LoopFileName, A_LoopFilePath)
+    
+    ListView.ModifyCol()
+    
 }
 
 
-; GUI
-
-; GUI Resolution
-MainGui.Add("GroupBox", "X10 Y10 r3 Section")
-MainGui.Add("Text", "XS+10 YS+10", "Resolution:")
-RPicker := MainGui.Add("ComboBox",, Resolutions)
-RPicker.OnEvent("Change", UpdateResolution)
-RPickerText := MainGui.Add("Text",, Resolution)
-
-; GUI Buttons
-MainGui.Add("GroupBox", "X10 r1 Section")
-MainGui.Add("Button", "XS+5 YS+10", "Demonstrate")
-MainGui.Add("Button", "YP vScriptToggle", "Start")
-
-; GUI ListView
-MainGui.Add("Text", "YM Section", "Scripts:")
-LV := MainGui.Add("ListView","")
+; Button Events
 
 
+; Run the script
+ListScripts()
 MainGui.Show()
