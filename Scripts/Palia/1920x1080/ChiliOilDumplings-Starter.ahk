@@ -1,10 +1,10 @@
 #Requires AutoHotkey v2.0
-; 1920x1080 Windowed Fullscreen 
+; 1920x1080 Windowed Fullscreen V1.0
 
 /* 
 Use this script to start Chili Oil Dumplings.
 This is a UI improvement to mitigate shenanigans.
-Press SHIFT+z to run the script.
+Press FORWARD MOUSE BUTTON to run the script.
 Press SHIFT+F1 to test the script.
 */
 
@@ -22,8 +22,8 @@ ButtonThree := "1200 975"   ; Start Button
 
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
-+z::MainScript      ; Run main script
-+F1::HelpScript     ; Run help script
+XButton2::MainScript      ; Run main script
++F1::HelpScript           ; Run help script
 
 
 ; Functions

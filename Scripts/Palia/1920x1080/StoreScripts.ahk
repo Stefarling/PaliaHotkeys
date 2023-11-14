@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-; 1920x1080 Windowed Fullscreen 
+; 1920x1080 Windowed Fullscreen V1.0
 
 ; USE WITH CARE! THIS CANNOT BE UNDONE!
 

@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-; Manages all scripts in a folder
+; Universal V1.0
 
 
 /*
@@ -8,8 +8,6 @@ Use this script to manage all scripts in the folder.
 
 
 /* TODO
-Make a scripts folder button.
-Add green/red light when running.
 Add ability to preview script content.
 Add Test button.
 Add most of this to context menu.

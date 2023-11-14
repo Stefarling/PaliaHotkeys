@@ -1,10 +1,10 @@
 ﻿#Requires AutoHotkey v2.0
-; 2560x1440 Windowed Fullscreen 
+; 2560x1440 Windowed Fullscreen V1.0
 
 /* 
 Use this script to select Batter when creating a Celebration Cake.
 This is to avoid fighting the UI when multiple people make batter.
-Press SHIFT+z to run the script.
+Press FORWARD MOUSE BUTTON to run the script.
 Press SHIFT+F1 to test the script.
 */
 
@@ -22,7 +22,7 @@ ButtonThree  := "1600 1190" ; Make button
 
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
-+z::MainScript      ; Run main script
+XButton2::MainScript      ; Run main script
 +F1::HelpScript     ; Run help script
 
 

@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-; Universal
+; Universal V1.0
 
 /* 
 Perform multi purchases at stores with this script. 
