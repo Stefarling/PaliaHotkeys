@@ -24,9 +24,15 @@ Persistent
 
 ; Variables
 ProgramName             := "ScriptManager by Stef"
-Resolutions             := ["1280x720", "1920x1080", "2560x1440"]
+Resolutions             := ["1920x1080", "2560x1440"]
 Scripts                 := []
+ScriptsRunning          := 0
 Resolution              := ""
+FocusedScript           := ""
+
+Running                 := "✓"
+Stopped                 := "X"
+Unknown                 := "?"
 
 
 ; Gui
@@ -37,19 +43,24 @@ MainGui.Title           := ProgramName
 ResolutionGuiLabel      := MainGui.Add("Text", "Section","Resolution")
 ResolutionComboBox      := MainGui.Add("ComboBox", "", Resolutions)
 
-StartButton              := MainGui.Add("Button", "Y+40 r1", "Start Script")
-StopButton               := MainGui.Add("Button", "YP r1", "Stop Script")
+StartButton             := MainGui.Add("Button", "Section Y+5 r2 w60", "Start`nScript")
+ScriptsFolderButton     := MainGui.Add("Button","r2 w60","Scripts`nFolder")
+StopButton              := MainGui.Add("Button", "YP r2 w60", "Stop`nScript")
+
 
 
 ; Gui ListView
-ListView                := MainGui.Add("ListView", "Section YS w300",["Running", "Script Name", "Path"])
+ListView                := MainGui.Add("ListView", "Section XM+150 YM+0 h150 w300 -multi",["", "Script Name", "Path"])
 ListView.ModifyCol()
+ListView.ModifyCol(3, "150")
 
-; Gui Statusbar
-StatusBar               := MainGui.Add("StatusBar",,)
 
 ; Gui OnEvents
 ResolutionComboBox.OnEvent("Change", UpdateResolution )
+StartButton.OnEvent("Click", StartScript)
+StopButton.OnEvent("Click", StopScript)
+ScriptsFolderButton.OnEvent("Click", OpenScriptsFolder)
+ListView.OnEvent("ItemFocus", ScriptFocused)
 
 
 ; Functions
@@ -62,20 +73,92 @@ UpdateResolution(obj, info){
 
 }
 
+OpenScriptsFolder(*){
+    try {
+        Run "explore " A_ScriptDir "\Scripts"
+        
+    }
+}
+
+StartScript(*){
+    if(FocusedScript = ""){
+    }else{
+        Run FocusedScript
+    }
+
+}
+
+StopScript(*){
+    if(FocusedScript = ""){
+        ; DO NOTHING
+    }else{
+        DetectHiddenWindows "On"
+        DetectHiddenText "On"
+
+        scriptie := RegExReplace(FocusedScript, "^.*\\")
+
+        WinClose(scriptie)
+
+        DetectHiddenText "Off"
+        DetectHiddenWindows "Off"
+        
+    }
+    
+}
+
+ScriptFocused(obj, item){
+       global FocusedScript := ListView.GetText(item, 3)
+}
+
 ListScripts(){
     scriptsUniversalPath    := A_ScriptDir "\Scripts\Palia\Universal"
     scriptsResolutionPath   := A_ScriptDir "\Scripts\Palia\" Resolution
 
     ListView.Delete()
+    ListView.Opt("-Redraw")
 
     Loop Files, scriptsUniversalPath "\*.ahk"
-        ListView.Add(,, A_LoopFileName, A_LoopFilePath)
+        ListView.Add(,Unknown, A_LoopFileName, A_LoopFilePath)
 
     Loop Files, scriptsResolutionPath "\*ahk"
-        ListView.Add(,, A_LoopFileName, A_LoopFilePath)
+        ListView.Add(,Unknown, A_LoopFileName, A_LoopFilePath)
     
     ListView.ModifyCol()
+    ListView.ModifyCol(2, "Sort")
+    ListView.ModifyCol(3, "150")
     
+    ListView.Opt("+Redraw")    
+}
+
+UpdateScriptsStatus(){
+    DetectHiddenWindows "On"
+    ListView.Opt("-Redraw")
+    ScriptsRunning := 0
+    ListView.Modify(0,, Stopped)
+    ListView.ModifyCol(3, "150")
+
+    runningScripts := WinGetList("ahk_class AutoHotkey")
+    for k, v in  runningScripts{
+        title := WinGetTitle(runningScripts[k])
+        title := RegExReplace(title, " - AutoHotkey v[\.0-9]+$")
+        Loop ListView.GetCount(){
+            if (title == ListView.GetText(A_Index, 3)){
+                ListView.Modify(A_Index,, Running )
+                ScriptsRunning++
+                ListView.ModifyCol(1,, ScriptsRunning)
+            }
+        }
+    }
+    
+    DetectHiddenWindows "Off"
+    ListView.ModifyCol(3, "150")
+    ListView.Opt("+Redraw")  
+}
+
+UpdateGui(){
+    UpdateScriptsStatus()
+
+
 }
 
 
@@ -84,4 +167,5 @@ ListScripts(){
 
 ; Run the script
 ListScripts()
+SetTimer(UpdateGui, 1000)
 MainGui.Show()
