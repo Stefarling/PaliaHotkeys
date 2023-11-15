@@ -9,21 +9,21 @@ Press SHIFT+F1 to test the script.
 */
 
 
-; Settings
-CoordMode "Mouse", "Screen" ; Move mouse relative to screen
+; Hotkeys
+; https://www.autohotkey.com/docs/v2/KeyList.htm
+XButton2::MainScript      ; Run main script
++F1::HelpScript           ; Run help script
 
 
 ; Variables
 SleepTimer  := 1            ; Milliseconds
 ButtonOne   := "690 550"    ; First button to try
 ButtonTwo   := "690 700"    ; Second button to try
-ButtonThree  := "1600 1190" ; Make button
+ButtonThree := "1600 1190"  ; Make button
 
 
-; Hotkeys
-; https://www.autohotkey.com/docs/v2/KeyList.htm
-XButton2::MainScript      ; Run main script
-+F1::HelpScript     ; Run help script
+; Settings
+CoordMode "Mouse", "Screen" ; Move mouse relative to screen
 
 
 ; Functions

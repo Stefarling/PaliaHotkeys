@@ -9,8 +9,10 @@ Press SHIFT+F1 to test the script.
 */
 
 
-; Settings
-CoordMode "Mouse", "Screen" ; Move mouse relative to screen
+; Hotkeys
+; https://www.autohotkey.com/docs/v2/KeyList.htm
+XButton2::MainScript      ; Run main script
++F1::HelpScript           ; Run help script
 
 
 ; Variables
@@ -20,10 +22,8 @@ ButtonTwo   := "620 975"    ; Tick star ingredients
 ButtonThree := "1200 975"   ; Start Button
 
 
-; Hotkeys
-; https://www.autohotkey.com/docs/v2/KeyList.htm
-XButton2::MainScript      ; Run main script
-+F1::HelpScript           ; Run help script
+; Settings
+CoordMode "Mouse", "Screen" ; Move mouse relative to screen
 
 
 ; Functions

@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-; 1920x1080 Windowed Fullscreen V1.0
+; 2560x1440 Windowed Fullscreen V1.0
 
 ; USE WITH CARE! THIS CANNOT BE UNDONE!
 
@@ -28,12 +28,12 @@ Press SHIFT and purchase to buy 50 times.
 
 ; Variables
 SleepTimer      := 10                          ; Milliseconds
-BarFiveX        := "880"                       ; X coordinate of top left item
-BarFiveY        := "250"                       ; Y coordinate of top left item
-ItemSize        := "60"                        ; Item size
-ItemSpacingX    := "30"                        ; Space between items horizontally
-ItemSpacingY    := "20"                        ; Space between items vertically
-ButtonSellStack := "1300 960"                  ; Button to sell stack
+BarFiveX        := "1173"                      ; X coordinate of top left item
+BarFiveY        := "333"                       ; Y coordinate of top left item
+ItemSize        := "80"                        ; Item size
+ItemSpacingX    := "40"                        ; Space between items horizontally
+ItemSpacingY    := "26"                        ; Space between items vertically
+ButtonSellStack := "1733 1280"                 ; Button to sell stack
 ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
 
