@@ -1,6 +1,8 @@
 # PaliaHotkeys
 Workarounds for poor UI.
 
+A Manager can be used and is being developed here: https://github.com/Stefarling/AHKser
+
 Read the documentation for AutoHotKey here: https://www.autohotkey.com/docs/v2/
 
 Scripts are screen resolution dependant, except for the scripts in the "Universal" folder.
