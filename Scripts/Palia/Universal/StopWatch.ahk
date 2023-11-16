@@ -1,8 +1,9 @@
 ﻿#Requires AutoHotkey v2.0
-; Version 1.0
-; It is what it is
-; Stef is not responsible for your tinkering!
-
+; Version 1.0.1
+; Author Stefarling
+; Changelog
+; Corrected output timestrings to match google sheet expectations
+; End of Changelog
 
 ; HotKeys
 F1::ActivateStart()
@@ -167,13 +168,7 @@ TimeToString(time){
     Seconds := Floor(Mod(time, 60000) / 1000)
     Milliseconds := Mod(time, 1000)
 
-    ; Construct the time string based on the non-zero components
-    if (Hours > 0)
         timeString := Format("{:02}:{:02}:{:02}.{:03}", Hours, Minutes, Seconds, Milliseconds)
-    else if (Minutes > 0)
-        timeString := Format("{:02}:{:02}.{:03}", Minutes, Seconds, Milliseconds)
-    else
-        timeString := Format("{:02}.{:03}", Seconds, Milliseconds)
 
     return timeString
 
