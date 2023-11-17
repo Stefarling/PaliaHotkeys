@@ -2,7 +2,7 @@
 ; 1920x1080 Windowed Fullscreen V1.0.2
 
 /* 
-Use this script to start Crab Pot Pie.
+Use this script to start any cooking recipe.
 This is a UI improvement to mitigate shenanigans.
 Follow the on-screen prompt.
 */
