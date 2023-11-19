@@ -4,12 +4,13 @@
 ; TARGET 0.172.0
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
-; CATEGORY Palia Trade 2560x1440
+; CATEGORY Palia Trade 1280x720 BROKEN
 
+; USE WITH CARE! THIS CANNOT BE UNDONE!
 
-/*
-HELPBEGIN
+/* 
 This script improves the UI at stores.
+Press SHIFT+F1 to test the script.
 Press SHIFT+2 to sell everything in bar 2.
 Press SHIFT+3 to sell everything in bar 3.
 Press SHIFT+4 to sell everything in bar 4.
@@ -17,7 +18,6 @@ Press SHIFT+5 to sell everything in bar 5.
 Press purchase to buy once.
 Press CTRL and purchase to buy 10 times.
 Press SHIFT and purchase to buy 50 times.
-HELPEND
 */
 
 
@@ -33,12 +33,12 @@ HELPEND
 
 ; Variables
 SleepTimer      := 10                          ; Milliseconds
-BarFiveX        := "1173"                      ; X coordinate of top left item
-BarFiveY        := "333"                       ; Y coordinate of top left item
-ItemSize        := "80"                        ; Item size
-ItemSpacingX    := "40"                        ; Space between items horizontally
-ItemSpacingY    := "26"                        ; Space between items vertically
-ButtonSellStack := "1733 1280"                 ; Button to sell stack
+BarFiveX        := "880"                       ; X coordinate of top left item
+BarFiveY        := "250"                       ; Y coordinate of top left item
+ItemSize        := "60"                        ; Item size
+ItemSpacingX    := "30"                        ; Space between items horizontally
+ItemSpacingY    := "20"                        ; Space between items vertically
+ButtonSellStack := "1300 960"                  ; Button to sell stack
 ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
 

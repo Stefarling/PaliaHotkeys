@@ -1,5 +1,10 @@
 ﻿#Requires AutoHotkey v2.0
-; 1920x1080 Windowed Fullscreen V1.0
+; TITLE Celebration Cake - Batter Script
+; VERSION 1.0.2-alpha1
+; TARGET 0.172.0
+; AUTHOR Stefarling
+; DESCRIPTION Improves the UI in stores.
+; CATEGORY Palia Cooking 'Celebration Cake' 1920x1080
 
 /* 
 Use this script to select Batter when creating a Celebration Cake.

@@ -1,9 +1,18 @@
 ﻿#Requires AutoHotkey v2.0
-; Version 1.0.1
-; Author Stefarling
-; Changelog
-; Corrected output timestrings to match google sheet expectations
-; End of Changelog
+; TITLE StopWatch by Stef
+; VERSION 1.0.2
+; TARGET N/A
+; AUTHOR Stefarling
+; DESCRIPTION Stopwatch app with OSD capability.
+; CATEGORY Utility Universal
+
+/*
+HELPBEGIN
+Use this script to display an on-screen stopwatch.
+Will export to script folder.
+Press the Lock hotkey to unlock when locked.
+HELPEND
+*/
 
 ; HotKeys
 F1::ActivateStart()

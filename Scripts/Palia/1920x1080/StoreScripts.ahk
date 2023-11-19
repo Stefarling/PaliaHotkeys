@@ -1,5 +1,10 @@
 #Requires AutoHotkey v2.0
-; 1920x1080 Windowed Fullscreen V1.0
+; TITLE Store Scripts
+; VERSION 1.0.2-alpha1
+; TARGET 0.172.0
+; AUTHOR Stefarling
+; DESCRIPTION Improves the UI in stores.
+; CATEGORY Palia Trade 1920x1080
 
 ; USE WITH CARE! THIS CANNOT BE UNDONE!
 

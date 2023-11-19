@@ -4,8 +4,10 @@
 ; TARGET 0.172.0
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
-; CATEGORY Palia Trade 2560x1440
+; CATEGORY Palia Trade Universal EXPERIMENTAL
 
+; Based on 2560x1440 Windowed Fullscreen V1.0
+; THIS SCRIPT IS UNTESTED
 
 /*
 HELPBEGIN
