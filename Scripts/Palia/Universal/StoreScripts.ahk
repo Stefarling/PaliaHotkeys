@@ -1,27 +1,32 @@
 #Requires AutoHotkey v2.0
 ; TITLE Store Scripts
-; VERSION 1.0.2-alpha1
-; TARGET 0.172.0
+; SCRIPTVERSION 1.0.2
+; TARGETAPP Palia
+; TARGETVERSION 0.172.0
+; TARGETRESOLUTION Any
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
-; CATEGORY Palia Trade Universal EXPERIMENTAL
+; MAINCATEGORY Trade
+; SUBCATEGORY Enhancement
+; RELEASE Experimental
 
-; Based on 2560x1440 Windowed Fullscreen V1.0
-; THIS SCRIPT IS UNTESTED
+; BEGINHELPSCRIPT
++F1::
+Help(*){
 
-/*
-HELPBEGIN
-This script improves the UI at stores.
-Press SHIFT+2 to sell everything in bar 2.
-Press SHIFT+3 to sell everything in bar 3.
-Press SHIFT+4 to sell everything in bar 4.
-Press SHIFT+5 to sell everything in bar 5.
-Press purchase to buy once.
-Press CTRL and purchase to buy 10 times.
-Press SHIFT and purchase to buy 50 times.
-HELPEND
-*/
-
+    MsgBox "
+    (
+    This script improves the UI at stores.
+    Press SHIFT+2 to sell everything in bar 2.
+    Press SHIFT+3 to sell everything in bar 3.
+    Press SHIFT+4 to sell everything in bar 4.
+    Press SHIFT+5 to sell everything in bar 5.
+    Press purchase to buy once.
+    Press CTRL and purchase to buy 10 times.
+    Press SHIFT and purchase to buy 50 times.
+    )"
+}
+; ENDHELPSCRIPT
 
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
@@ -43,9 +48,10 @@ ItemSpacingY    := "26"                        ; Space between items vertically
 ButtonSellStack := "1733 1280"                 ; Button to sell stack
 ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
+; Don't edit below this line
 
 ; Settings
-CoordMode "Mouse", "Screen" ; Move mouse relative to screen
+CoordMode "Mouse", "Client" ; Move mouse relative to screen
 
 
 ; Functions

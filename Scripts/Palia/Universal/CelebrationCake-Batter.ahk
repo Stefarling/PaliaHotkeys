@@ -1,28 +1,36 @@
 ﻿#Requires AutoHotkey v2.0
-; TITLE Celebration Cake - Batter Script
-; VERSION 1.0.2-alpha1
-; TARGET 0.172.0
+; TITLE Batter Script
+; SCRIPTVERSION 1.0.2
+; TARGETAPP Palia
+; TARGETVERSION 0.172.0
+; TARGETRESOLUTION Any
 ; AUTHOR Stefarling
-; DESCRIPTION Use this script to select batter.
-; CATEGORY Palia Cooking 'Celebration Cake' EXPERIMENTAL
+; DESCRIPTION Use this script to select batter for Celebration Cake.
+; MAINCATEGORY Cooking
+; SUBCATEGORY Celebration Cake
+; RELEASE Experimental
 
-/*
-HELPBEGIN
-Use this script to select Batter when creating a Celebration Cake.
-This is to avoid fighting the UI when multiple people make batter.
-Press FORWARD MOUSE BUTTON to run the script.
-Press SHIFT+F1 to test the script.
-HELPEND
-*/
+; BEGINHELPSCRIPT
++F1::
+HelpScript(*){
 
-; Based on 2560x1440 Windowed Fullscreen V1.0
+    MsgBox "
+    (
+    Use this script to select Batter when creating a Celebration Cake.
+    This is to avoid fighting the UI when multiple people make batter.
+    Press FORWARD MOUSE BUTTON to run the script.
+    Press SHIFT+F1 to test the script.
+    )"
+}
+
+; ENDHELPSCRIPT
 
 
 
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
-XButton2::MainScript      ; Run main script
-+F1::HelpScript           ; Run help script
+XButton2::MainScript
++F2::TestScript
 
 
 ; Variables
@@ -33,7 +41,7 @@ ButtonThree := "1600 1190"  ; Make button
 
 
 ; Settings
-CoordMode "Mouse", "Screen" ; Move mouse relative to screen
+CoordMode "Mouse", "Client" ; Move mouse relative to screen
 
 
 ; Functions
@@ -49,7 +57,7 @@ MainScript() {             ; Starts the script
     Sleep SleepTimer       ; Delay
 }
 
-HelpScript() {              ; Shows where we'll click
+TestScript() {              ; Shows where we'll click
     Click ButtonOne ", 0"   ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
     Sleep SleepTimer        ; Delay

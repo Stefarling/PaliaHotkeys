@@ -1,18 +1,28 @@
 ﻿#Requires AutoHotkey v2.0
 ; TITLE StopWatch by Stef
-; VERSION 1.0.2
-; TARGET N/A
+; SCRIPTVERSION 1.0.2
+; TARGETAPP Universal
+; TARGETVERSION All
+; TARGETRESOLUTION Any
 ; AUTHOR Stefarling
 ; DESCRIPTION Stopwatch app with OSD capability.
-; CATEGORY Utility Universal
+; MAINCATEGORY Tools
+; SUBCATEGORY Utility
+; RELEASE Stable
 
-/*
-HELPBEGIN
-Use this script to display an on-screen stopwatch.
-Will export to script folder.
-Press the Lock hotkey to unlock when locked.
-HELPEND
-*/
+; BEGINHELPSCRIPT
++F1::
+Help(*){
+
+    MsgBox "
+    (
+    Use this script to display an on-screen stopwatch.
+    Will export to script folder.
+    Press the Lock hotkey to unlock when locked.
+    )"
+}
+; ENDHELPSCRIPT
+
 
 ; HotKeys
 F1::ActivateStart()
@@ -32,6 +42,8 @@ CurrentTotalTime := 0
 TotalTime := 0
 Locked := false
 
+; Don't edit below this line
+
 ; Settings
 Persistent
 
@@ -50,8 +62,8 @@ TotalTimeButton     := MainGui.Add("Button","vTotalTime Section","00:00:00.000")
 LapView             := MainGui.Add("ListView", "-Multi Section w290 Count 200 NoSortHdr -LV0x10 -ReadOnly -WantF2", ["#", "Lap Time", "Total Time"])
 LapView.ModifyCol
 LapView.ModifyCol(1, "Integer Center AutoHdr 40")
-LapView.ModifyCol(2, "Integer Center 110 ")
-LapView.ModifyCol(3, "Integer Center 110 ")
+LapView.ModifyCol(2, "Integer Center 130 ")
+LapView.ModifyCol(3, "Integer Center 130 ")
 
 ; Button Events
 StartButton.OnEvent("Click", (*) => ActivateStart())

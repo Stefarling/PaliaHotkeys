@@ -1,18 +1,27 @@
 ﻿#Requires AutoHotkey v2.0
 ; TITLE Recipe Starter
-; VERSION 1.0.2
-; TARGET 0.172.0
+; SCRIPTVERSION 1.0.2
+; TARGETAPP Palia
+; TARGETVERSION 0.172.0
+; TARGETRESOLUTION Any
 ; AUTHOR Stefarling
-; DESCRIPTION Use this script to start any cooking recipe.
-; CATEGORY Palia Cooking Starter
+; DESCRIPTION Use this script to select and start any cooking recipe.
+; MAINCATEGORY Cooking
+; SUBCATEGORY Starter
+; RELEASE Stable
 
-/*
-HELPBEGIN
-Use this script to start any cooking recipe.
-This is a UI improvement to mitigate shenanigans.
-Follow the on-screen prompt to calibrate.
-HELPEND
-*/
+; BEGINHELPSCRIPT
++F1::
+Help(*){
+
+    MsgBox "
+    (
+    Use this script to start any cooking recipe.
+    This is a UI improvement to mitigate shenanigans.
+    Follow the on-screen prompt to calibrate.
+    )"
+}
+; ENDHELPSCRIPT
 
 
 ; Variables
@@ -59,6 +68,8 @@ ScaleFactorY            := 0
 Hotkey ScriptHotkey, PrimaryScript, "Off"
 #HotIf
 
+
+; Don't edit below this line
 
 ; Settings
 CoordMode "Mouse", "Client" ; Move mouse relative to Palia window
