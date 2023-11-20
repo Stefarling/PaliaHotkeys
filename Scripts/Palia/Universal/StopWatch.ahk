@@ -3,7 +3,7 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Universal
 ; TARGETVERSION All
-; TARGETRESOLUTION Any
+; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
 ; DESCRIPTION Stopwatch app with OSD capability.
 ; MAINCATEGORY Tools

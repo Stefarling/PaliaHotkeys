@@ -3,7 +3,7 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Palia
 ; TARGETVERSION 0.172.0
-; TARGETRESOLUTION Any
+; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
 ; DESCRIPTION Use this script to select batter for Celebration Cake.
 ; MAINCATEGORY Cooking

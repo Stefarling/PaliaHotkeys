@@ -3,9 +3,9 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Palia
 ; TARGETVERSION 0.172.0
-; TARGETRESOLUTION Any
+; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
-; DESCRIPTION Use this script to select and start any cooking recipe.
+; DESCRIPTION Use this script to select and start Universal cooking recipe.
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Starter
 ; RELEASE Stable
@@ -16,7 +16,7 @@ Help(*){
 
     MsgBox "
     (
-    Use this script to start any cooking recipe.
+    Use this script to start Universal cooking recipe.
     This is a UI improvement to mitigate shenanigans.
     Follow the on-screen prompt to calibrate.
     )"
