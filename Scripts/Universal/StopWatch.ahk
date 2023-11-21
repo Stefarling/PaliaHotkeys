@@ -158,7 +158,7 @@ ActivateExport(){
 
     OutputString .= "`n`n"
 
-    CurrentTime := FormatTime() ".csv"
+    CurrentTime := "Time.csv"
     FileName := A_ScriptDir "\" CurrentTime
     FileAppend OutputString, FileName
 
