@@ -17,7 +17,7 @@ Help(*){
     MsgBox "
     (
     Use this script to display an on-screen stopwatch.
-    Will export to script folder
+    Will export to script folder.
     Press the Lock hotkey to unlock when locked.
     )"
 }
