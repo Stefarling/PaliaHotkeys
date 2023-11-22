@@ -3,12 +3,12 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Palia
 ; TARGETVERSION 0.172.0
-; TARGETRESOLUTION 1920x1080
+; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
 ; MAINCATEGORY Trade
 ; SUBCATEGORY Enhancement
-; RELEASE Stable
+; RELEASE Experimental
 
 ; BEGINHELPSCRIPT
 +F1::
@@ -40,17 +40,18 @@ Help(*){
 
 ; Variables
 SleepTimer      := 10                          ; Milliseconds
-BarFiveX        := "880"                       ; X coordinate of top left item
-BarFiveY        := "250"                       ; Y coordinate of top left item
-ItemSize        := "60"                        ; Item size
-ItemSpacingX    := "30"                        ; Space between items horizontally
-ItemSpacingY    := "20"                        ; Space between items vertically
-ButtonSellStack := "1300 960"                  ; Button to sell stack
+BarFiveX        := "1173"                      ; X coordinate of top left item
+BarFiveY        := "333"                       ; Y coordinate of top left item
+ItemSize        := "80"                        ; Item size
+ItemSpacingX    := "40"                        ; Space between items horizontally
+ItemSpacingY    := "26"                        ; Space between items vertically
+ButtonSellStack := "1733 1280"                 ; Button to sell stack
 ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
+; Don't edit below this line
 
 ; Settings
-CoordMode "Mouse", "Client" ; Move mouse relative to client area
+CoordMode "Mouse", "Client" ; Move mouse relative to screen
 
 
 ; Functions

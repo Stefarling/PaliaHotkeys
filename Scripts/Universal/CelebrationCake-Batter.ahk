@@ -3,7 +3,7 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Palia
 ; TARGETVERSION 0.172.0
-; TARGETRESOLUTION 2560x1440
+; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
 ; DESCRIPTION Use this script to select batter for Celebration Cake.
 ; MAINCATEGORY Cooking
@@ -26,10 +26,11 @@ HelpScript(*){
 ; ENDHELPSCRIPT
 
 
+
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
-XButton2::MainScript      ; Run main script
-+F2::TestScript           ; Run help script
+XButton2::MainScript
++F2::TestScript
 
 
 ; Variables

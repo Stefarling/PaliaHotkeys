@@ -3,12 +3,12 @@
 ; SCRIPTVERSION 1.0.2
 ; TARGETAPP Palia
 ; TARGETVERSION 0.172.0
-; TARGETRESOLUTION 1920x1080
+; TARGETRESOLUTION 1280x720
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
 ; MAINCATEGORY Trade
 ; SUBCATEGORY Enhancement
-; RELEASE Stable
+; RELEASE Experimental
 
 ; BEGINHELPSCRIPT
 +F1::
@@ -27,6 +27,7 @@ Help(*){
     )"
 }
 ; ENDHELPSCRIPT
+
 
 ; Hotkeys
 ; https://www.autohotkey.com/docs/v2/KeyList.htm
@@ -50,7 +51,7 @@ ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
 
 ; Settings
-CoordMode "Mouse", "Client" ; Move mouse relative to client area
+CoordMode "Mouse", "Client" ; Move mouse relative to client
 
 
 ; Functions

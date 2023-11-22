@@ -1,19 +1,32 @@
 #Requires AutoHotkey v2.0
-; 2560x1440 Windowed Fullscreen V1.0
+; TITLE Store Scripts
+; SCRIPTVERSION 1.0.2
+; TARGETAPP Palia
+; TARGETVERSION 0.172.0
+; TARGETRESOLUTION 2560x1440
+; AUTHOR Stefarling
+; DESCRIPTION Improves the UI in stores.
+; MAINCATEGORY Trade
+; SUBCATEGORY Enhancement
+; RELEASE Stable
 
-; USE WITH CARE! THIS CANNOT BE UNDONE!
+; BEGINHELPSCRIPT
++F1::
+Help(*){
 
-/* 
-This script improves the UI at stores.
-Press SHIFT+F1 to test the script.
-Press SHIFT+2 to sell everything in bar 2.
-Press SHIFT+3 to sell everything in bar 3.
-Press SHIFT+4 to sell everything in bar 4.
-Press SHIFT+5 to sell everything in bar 5.
-Press purchase to buy once.
-Press CTRL and purchase to buy 10 times.
-Press SHIFT and purchase to buy 50 times.
-*/
+    MsgBox "
+    (
+    This script improves the UI at stores.
+    Press SHIFT+2 to sell everything in bar 2.
+    Press SHIFT+3 to sell everything in bar 3.
+    Press SHIFT+4 to sell everything in bar 4.
+    Press SHIFT+5 to sell everything in bar 5.
+    Press purchase to buy once.
+    Press CTRL and purchase to buy 10 times.
+    Press SHIFT and purchase to buy 50 times.
+    )"
+}
+; ENDHELPSCRIPT
 
 
 ; Hotkeys
@@ -38,7 +51,7 @@ ItemColumns     := [1, 2, 3, 4, 5, 6, 7, 8]    ; Array because AHKv2 is daft
 
 
 ; Settings
-CoordMode "Mouse", "Screen" ; Move mouse relative to screen
+CoordMode "Mouse", "Client" ; Move mouse relative to screen
 
 
 ; Functions
