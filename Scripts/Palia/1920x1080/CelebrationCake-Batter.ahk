@@ -1,8 +1,8 @@
 ﻿#Requires AutoHotkey v2.0
 ; TITLE Batter Script
-; SCRIPTVERSION 1.0.2
+; SCRIPTVERSION 1.0.3
 ; TARGETAPP Palia
-; TARGETVERSION 0.172.0
+; TARGETVERSION 0.173.0
 ; TARGETRESOLUTION 1920x1080
 ; AUTHOR Stefarling
 ; DESCRIPTION Use this script to select batter for Celebration Cake.
