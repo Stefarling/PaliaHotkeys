@@ -3,12 +3,12 @@
 ; SCRIPTVERSION 1.0.3
 ; TARGETAPP Palia
 ; TARGETVERSION 0.173.0
-; TARGETRESOLUTION Universal
+; TARGETRESOLUTION 1920x1080
 ; AUTHOR Stefarling
-; DESCRIPTION Use this script to select and start Universal cooking recipe.
+; DESCRIPTION Use this script to select star ingredients and start any cooking recipe.
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Starter
-; RELEASE Experimental
+; RELEASE Stable
 
 ; BEGINHELPSCRIPT
 +F1::
@@ -83,48 +83,31 @@ GuideGui.Opt("+AlwaysOnTop -Resize -SysMenu +OwnDialogs")
 GuideGui.SetFont(FontHeading)
 TextSection     :="Step 1:"
 TutorialText    := GuideGui.Add("Text","Section Left " GuiWidth,TextSection)
-
 GuideGui.SetFont(FontText)
-TextSection     :="Open your crafting station UI but touch or click nothing."
+TextSection     :="Open your crafting station and click 'Calibrate'."
 TutorialText    := GuideGui.Add("Text","XP YP+15 Left " GuiWidth,TextSection)
+ButtonCalibrate := GuideGui.Add("Button",,"Calibrate")
 
 GuideGui.SetFont(FontHeading)
 TextSection     :="Step 2:"
 TutorialText    := GuideGui.Add("Text","Section Left " GuiWidth,TextSection)
 
 GuideGui.SetFont(FontText)
-TextSection     :="Select the recipe number from this dropdown."
-TutorialText    := GuideGui.Add("Text","XP YP+15 Left " GuiWidth,TextSection)
-RecipeComboBox  := GuideGui.Add("ComboBox",,[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 24, 25])
+TextSection     :="Close your UI, then reopen, select your recipe and press 'Test'."
+TutorialText        := GuideGui.Add("Text","XP YP+15 Left " GuiWidth,TextSection)
+ButtonTest          := GuideGui.Add("Button",,"Test")
 
 GuideGui.SetFont(FontHeading)
 TextSection     :="Step 3:"
 TutorialText    := GuideGui.Add("Text","Section Left " GuiWidth,TextSection)
 
 GuideGui.SetFont(FontText)
-TextSection     :="Click 'Calibrate' when the above steps are done."
-TutorialText    := GuideGui.Add("Text","XP YP+15 Left " GuiWidth,TextSection)
-ButtonCalibrate := GuideGui.Add("Button",,"Calibrate")
-
-GuideGui.SetFont(FontHeading)
-TextSection     :="Step 4:"
-TutorialText    := GuideGui.Add("Text","Section Left " GuiWidth,TextSection)
-
-GuideGui.SetFont(FontText)
-TextSection     :="Close your UI, then reopen and press 'Test'."
-TutorialText        := GuideGui.Add("Text","XP YP+15 Left " GuiWidth,TextSection)
-ButtonTest          := GuideGui.Add("Button",,"Test")
-
-GuideGui.SetFont(FontHeading)
-TextSection     :="Step 6:"
-TutorialText    := GuideGui.Add("Text","Section Left " GuiWidth,TextSection)
-
-GuideGui.SetFont(FontText)
 TextSection     :="
 (
-The script only works after re-opening the UI.
+This script only works after re-opening the UI.
 
 Test your hotkey now. `n'Make' is disabled while testing.
+Default is MOUSE FORWARD.
 
 If it works, click 'Yes'.
 If not, click 'Quit' and rerun the script.
@@ -134,14 +117,13 @@ ButtonConfirm       := GuideGui.Add("Button",,"Yes")
 ButtonQuit          := GuideGui.Add("Button","XP+" GuiWidth+100 " YP", "Quit")
 
 ; GUI - Buttons
-ButtonCalibrate.Enabled     := false
+ButtonCalibrate.Enabled     := true
 ButtonTest.Enabled          := false
 ButtonConfirm.Enabled       := false
 ButtonQuit.Enabled          := true
 
 
 ; GUI - OnEvent
-RecipeComboBox.OnEvent("Change", AssignRecipeNumber)
 ButtonCalibrate.OnEvent("Click", CalibrateScript)
 ButtonTest.OnEvent("Click", TestScript)
 ButtonConfirm.OnEvent("Click", StartScript)
@@ -149,12 +131,6 @@ ButtonQuit.OnEvent("Click", ExitScript)
 
 
 ; Functions
-AssignRecipeNumber(obj, info){
-
-    global RecipeNumber := obj.Value
-    ButtonCalibrate.Enabled := true
-}
-
 CalibrateScript(*){
 
     if WinExist(ProgramName){
@@ -183,8 +159,6 @@ CalibrateScript(*){
         global ControlColor := PixelGetColor(ControlColorX, ControlColorY)
     }
 
-        TryRecipeButton
-        
         TryStarButton
         
         TryMakeButton
@@ -216,8 +190,6 @@ TestScript(*){
         }
     }
 
-    TryRecipeButton    
-
     TryStarButton
 
     TryMakeButton
@@ -228,21 +200,6 @@ TestScript(*){
     global ScriptEnabled    := true
 
 
-}
-
-TryRecipeButton(*){
-    if(RecipeNumber>0){
-        Loop RecipeNumber - 1
-        {
-            Send "{Down down}"
-            Sleep 20
-            Send "{Down up}"
-        }
-    }
-}
-
-TryRecipeButtonAlternate(*){
-    ; Fallback to coords
 }
 
 TryStarButton(*){
@@ -307,8 +264,6 @@ PrimaryScript(*){
 
         if(ScriptEnabled){
             Sleep SleepTimer
-
-            TryRecipeButton
 
             TryStarButton
 

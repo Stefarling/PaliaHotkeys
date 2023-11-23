@@ -1,8 +1,8 @@
 #Requires AutoHotkey v2.0
 ; TITLE Store Scripts
-; SCRIPTVERSION 1.0.2
+; SCRIPTVERSION 1.0.3
 ; TARGETAPP Palia
-; TARGETVERSION 0.172.0
+; TARGETVERSION 0.173.0
 ; TARGETRESOLUTION Universal
 ; AUTHOR Stefarling
 ; DESCRIPTION Improves the UI in stores.
