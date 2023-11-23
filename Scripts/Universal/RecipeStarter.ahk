@@ -8,7 +8,7 @@
 ; DESCRIPTION Use this script to select and start Universal cooking recipe.
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Starter
-; RELEASE Stable
+; RELEASE Experimental
 
 ; BEGINHELPSCRIPT
 +F1::
