@@ -34,7 +34,7 @@ XButton2::MainScript
 
 
 ; Variables
-SleepTimer  := 1            ; Milliseconds
+SleepTimer  := 10            ; Milliseconds
 ButtonOne   := "500 415"    ; First button to try
 ButtonTwo   := "500 500"    ; Second button to try
 ButtonThree  := "1200 880"  ; Make button
@@ -46,32 +46,46 @@ CoordMode "Mouse", "Screen" ; Move mouse relative to screen
 
 ; Functions
 MainScript() {             ; Starts the script
+    Sleep SleepTimer       ; Delay
     Click ButtonOne        ; Click Batter if it's higher on the list
-    Sleep SleepTimer       ; Delay
-    Click ButtonThree      ; Click Make
-    Sleep SleepTimer       ; Delay
 
-    Click ButtonTwo        ; Click Batter if it's lower on the list
     Sleep SleepTimer       ; Delay
     Click ButtonThree      ; Click Make
+
+    Sleep SleepTimer       ; Delay
+    
+    Sleep SleepTimer       ; Delay
+    Click ButtonTwo        ; Click Batter if it's lower on the list
+
+    Sleep SleepTimer       ; Delay
+    Click ButtonThree      ; Click Make
+
     Sleep SleepTimer       ; Delay
 }
 
 TestScript() {              ; Shows where we'll click
+    Sleep SleepTimer        ; Delay
     Click ButtonOne ", 0"   ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
-    Sleep SleepTimer        ; Delay
 
+    Sleep SleepTimer        ; Delay
+    
+    Sleep SleepTimer        ; Delay
     Click ButtonThree ", 0" ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
-    Sleep SleepTimer        ; Delay
 
+    Sleep SleepTimer        ; Delay
+    
+    Sleep SleepTimer        ; Delay
     Click ButtonTwo ", 0"   ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
-    Sleep SleepTimer        ; Delay
 
+    Sleep SleepTimer        ; Delay
+    
+    Sleep SleepTimer        ; Delay
     Click ButtonThree ", 0" ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
+
     Sleep SleepTimer        ; Delay
 }
 
