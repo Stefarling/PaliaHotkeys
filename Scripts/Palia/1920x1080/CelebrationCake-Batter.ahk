@@ -9,6 +9,7 @@
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Celebration Cake
 ; RELEASE Stable
+; https://raw.githubusercontent.com/Stefarling/PaliaHotkeys/main/Scripts/Palia/1920x1080/CelebrationCake-Batter.ahk
 
 ; BEGINHELPSCRIPT
 +F1::

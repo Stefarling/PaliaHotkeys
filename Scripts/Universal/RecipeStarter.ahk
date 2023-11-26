@@ -9,6 +9,7 @@
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Starter
 ; RELEASE Experimental
+; https://raw.githubusercontent.com/Stefarling/PaliaHotkeys/main/Scripts/Universal/RecipeStarter.ahk
 
 ; BEGINHELPSCRIPT
 +F1::

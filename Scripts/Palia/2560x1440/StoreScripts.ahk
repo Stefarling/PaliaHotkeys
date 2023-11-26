@@ -9,6 +9,7 @@
 ; MAINCATEGORY Trade
 ; SUBCATEGORY Enhancement
 ; RELEASE Stable
+; https://raw.githubusercontent.com/Stefarling/PaliaHotkeys/main/Scripts/Palia/2560x1440/StoreScripts.ahk
 
 ; BEGINHELPSCRIPT
 +F1::
