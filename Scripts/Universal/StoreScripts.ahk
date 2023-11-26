@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 ; TITLE Store Scripts
-; SCRIPTVERSION 1.0.3
+; SCRIPTVERSION 1.0.4
 ; TARGETAPP Palia
 ; TARGETVERSION 0.173.0
 ; TARGETRESOLUTION Universal
