@@ -38,7 +38,7 @@ XButton2::MainScript
 SleepTimer  := 10            ; Milliseconds
 ButtonOne   := "690 550"    ; First button to try
 ButtonTwo   := "690 700"    ; Second button to try
-ButtonThree := "1600 1190"  ; Make button
+ButtonMake := "1600 1190"  ; Make button
 
 
 ; Settings
@@ -51,7 +51,7 @@ MainScript() {             ; Starts the script
     Click ButtonOne        ; Click Batter if it's higher on the list
 
     Sleep SleepTimer       ; Delay
-    Click ButtonThree      ; Click Make
+    Click ButtonMake      ; Click Make
 
     Sleep SleepTimer       ; Delay
     
@@ -59,7 +59,7 @@ MainScript() {             ; Starts the script
     Click ButtonTwo        ; Click Batter if it's lower on the list
 
     Sleep SleepTimer       ; Delay
-    Click ButtonThree      ; Click Make
+    Click ButtonMake      ; Click Make
 
     Sleep SleepTimer       ; Delay
 }
@@ -72,7 +72,7 @@ TestScript() {              ; Shows where we'll click
     Sleep SleepTimer        ; Delay
     
     Sleep SleepTimer        ; Delay
-    Click ButtonThree ", 0" ; Move mouse but don't click
+    Click ButtonMake ", 0" ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
 
     Sleep SleepTimer        ; Delay
@@ -84,7 +84,7 @@ TestScript() {              ; Shows where we'll click
     Sleep SleepTimer        ; Delay
     
     Sleep SleepTimer        ; Delay
-    Click ButtonThree ", 0" ; Move mouse but don't click
+    Click ButtonMake ", 0" ; Move mouse but don't click
     ShowClickIndicator()    ; Show tooltip
 
     Sleep SleepTimer        ; Delay
