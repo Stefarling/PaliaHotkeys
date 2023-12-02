@@ -8,7 +8,7 @@
 ; DESCRIPTION Use this script to select batter for Celebration Cake.
 ; MAINCATEGORY Cooking
 ; SUBCATEGORY Celebration Cake
-; RELEASE Experimental
+; RELEASE Stable
 ; https://raw.githubusercontent.com/Stefarling/PaliaHotkeys/main/Scripts/Palia/2560x1440/CelebrationCake-Batter.ahk
 
 ; BEGINHELPSCRIPT
