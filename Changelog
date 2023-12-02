@@ -1,0 +1,18 @@
+# V1.1.0
+Redone Readme.md
+Added Template script.
+
+# V1.0.4
+Removed Universal.
+Removed support for 1280x720. Need more screenshots to recreate.
+Added source file to meta data.
+
+# V1.0.3
+Added missing changes to changelog. Woups.
+Incrased SleepTimer to make script execution more consistent in Batter scripts.
+
+# V1.0.2
+Moved StopWatch to AHKser.
+
+# V1.0.1-1
+Fixed inccorect folder structure
