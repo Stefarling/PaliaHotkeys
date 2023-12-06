@@ -2,7 +2,7 @@
 Attempting to make Palia UI more accesible with less shenanigans. 'Botting' or 'exploits' are **not** meant to be included here.
 
 ## Requirements
-* Windows OS (Preferably form within the last decade).
+* Windows OS (Preferably from within the last decade).
 * [AutoHotkey V2]() installed. V1 and V2 can coexist, but I only write for V2.
 * Nerves of steel.
 
