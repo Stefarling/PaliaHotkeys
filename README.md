@@ -3,7 +3,7 @@ Attempting to make Palia UI more accesible with less shenanigans. 'Botting' or '
 
 ## Requirements
 * Windows OS (Preferably form within the last decade).
-* [AutoHotkey V2]() installed. V1 and V2 can coexist, but I only write for V2.
+* [AutoHotkey V2](https://www.autohotkey.com/) installed. V1 and V2 can coexist, but I only write for V2.
 * Nerves of steel.
 
 ## Usage
